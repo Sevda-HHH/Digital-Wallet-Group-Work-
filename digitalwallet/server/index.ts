@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Router } from 'express';
 import mongoose from 'mongoose';
 import { ROUTES } from './routes';
 import cors from 'cors';
@@ -18,7 +18,6 @@ app.use(cors());
 app.use(express.json());
 
 const port = 8000;
-
 
 ROUTES.forEach(({ path, router }) => {
     app.use(path, router);
